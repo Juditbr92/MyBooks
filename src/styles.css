@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+
+:root{
+    --primaryColor: rgba(63, 131, 219, 0.722);
+    --primaryLetterColor: white;
+    --primaryFont: 'trebuchet ms', sans-serif;
+}
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.footerContainer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}

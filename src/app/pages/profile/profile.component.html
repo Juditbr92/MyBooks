@@ -1,0 +1,57 @@
+
+    <div class="bigContainer">
+        <div class="izqContainer">
+            <div class="izq">
+                <img class="imgProfile" src="/assets/img/fotoPerfil.jpeg">
+                <h2 class="profileName">Judit Bardón Romero</h2>
+                <div class="container userData">
+                    <div class="row">
+                        <div class="col">
+                            <h4>Nombre:</h4>
+                        </div>
+                        <div class="col">
+                            <p>{{user.name}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4>Apellidos:</h4>
+                        </div>
+                        <div class="col">
+                            <p>{{user.last_name}}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <h4>Email:</h4>
+                        </div>
+                        <div class="col">
+                            <p>{{user.email}}</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        
+        <div class="dchaContainer">
+            <div class="dcha"> 
+                <div class="icono">
+                    <i class="fa-solid fa-book icon"></i>
+                    <h2>Editar datos</h2>
+                </div>
+                <div class="changeData">
+                    <input type="text" name="Nombre" id="inputName" placeholder="Nombre" #inputName>
+                    <input type="text" name="Apellido" id="inputSurname" placeholder="Apellidos" #inputSurname>
+                    <input type="email" name="Email" id="inputEmail" placeholder="Email" #inputEmail>
+                    <input type="url" name="Foto" id="inputPhoto" placeholder="Url" #inputPhoto>
+                </div>
+                <div class="buttonContainer">
+                    <button (click) = "changeName(inputName)" (click) = "changeSurname(inputSurname)" (click) = "changeEmail(inputEmail)" (click) = "changePhoto(inputPhoto)">Modificar</button>
+                </div>
+                
+            </div>
+    
+        </div>
+
+        
+        
+    </div>

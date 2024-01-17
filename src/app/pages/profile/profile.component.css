@@ -52,6 +52,11 @@
 }
 
 .imgProfile{
+    height: 230px;
+    width: 250px;
+}
+
+.imgProfile{
     border-radius: 50%;
     margin-top: 20px;
 }
@@ -134,3 +139,5 @@ button{
     padding: 5px;
     margin-top: 5px;
 }
+
+

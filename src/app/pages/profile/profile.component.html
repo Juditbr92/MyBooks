@@ -2,8 +2,8 @@
     <div class="bigContainer">
         <div class="izqContainer">
             <div class="izq">
-                <img class="imgProfile" src="/assets/img/fotoPerfil.jpeg">
-                <h2 class="profileName">Judit Bardón Romero</h2>
+                <img class="imgProfile" src={{user.photo}}>
+                <h2 class="profileName">{{user.name}} {{user.last_name}}</h2>
                 <div class="container userData">
                     <div class="row">
                         <div class="col">
@@ -45,7 +45,7 @@
                     <input type="url" name="Foto" id="inputPhoto" placeholder="Url" #inputPhoto>
                 </div>
                 <div class="buttonContainer">
-                    <button (click) = "changeName(inputName)" (click) = "changeSurname(inputSurname)" (click) = "changeEmail(inputEmail)" (click) = "changePhoto(inputPhoto)">Modificar</button>
+                    <button (click) = "changeData(inputName, inputSurname, inputEmail, inputPhoto)" >Modificar</button>
                 </div>
                 
             </div>

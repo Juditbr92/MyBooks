@@ -7,11 +7,12 @@ import { HomeComponent } from './pages/home/home.component';
 import { FormRegisterComponent } from './component/form-register/form-register.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { BookComponent } from './pages/book/book.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent,HomeComponent,FormRegisterComponent, RegisterComponent, ProfileComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent,HomeComponent,FormRegisterComponent, RegisterComponent, ProfileComponent, BookComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -13,27 +13,20 @@ export class ProfileComponent {
   public user: User = {
     Id_user: 1,
     name: "Judit",
-    last_name: "Bardón Romero",
+    last_name: "Bardón",
     email: "j123@gmail.com",
-    photo: "https://www.google.es/url?sa=i&url=https%3A%2F%2Fmedinatusclasesmusical.art.blog%2F2020%2F01%2F14%2Fperfil-del-buen-lector%2F&psig=AOvVaw3iKuFkAwJSApSChYR3_sNP&ust=1704997596248000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCMD_2r6704MDFQAAAAAdAAAAABAD",
+    photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRScsD69qCqL-suNtMBeFwnPLmpSpw4nsbl0A&usqp=CAU",
     password: "abc123"
   }
-  public changeName(input: HTMLInputElement){
-    this.user.name = input.value;
-    
-  }
 
-  public changeSurname(input: HTMLInputElement){
-    this.user.last_name = input.value
-  }
+    public changeData(inputName:HTMLInputElement, inputSurname:HTMLInputElement, inputEmail:HTMLInputElement, inputPhoto:HTMLInputElement){
+      this.user.name = inputName.value, 
+      this.user.last_name = inputSurname.value, 
+      this.user.email = inputEmail.value,
+      this.user.photo = inputPhoto.value
+    }
 
-  public changeEmail(input: HTMLInputElement){
-    this.user.email = input.value;
-  }
-
-  public changePhoto(input: HTMLInputElement){
-    this.user.photo = input.value;
-  }
+  
 
 }
 

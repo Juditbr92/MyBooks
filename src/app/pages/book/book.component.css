@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: calc(100vh - 90px);
+    height: auto;
     margin-top: 10px;
 }
 
-.card {
-    height: 750px; 
+.cardC {
+    height: 770px; 
     width: 300px;
     border: 1px solid var(--primaryColor);
     display: flex;
@@ -16,50 +16,6 @@
     margin: 10px;
 }
 
-.btn{
-    display: flex;
-    width: 250px;
-    justify-content: center;
-    align-content: center;
-    background-color: var(--primaryColor);
-}
-
-.odd{
-    background-color: var(--primaryColor);
-}
-
-.even{
-    background-color: aquamarine;
-}
-
-.picture{
-    height: 60%;
-    width: 270px;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    margin: 5px 5px 0px 5px;
-}
-
-.card-title{
-    color: var(--primaryColor);
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    padding: 5px;
-    margin: 10px 0;
-}
-
-.card-text{
-    display: flex;
-    align-content: flex-start;
-    justify-items: flex-start;
-}
-
-.alert{
-    width: 50%;
-    height: 100px;
-}
 
 .formularioContainer{
     height: 750px;
@@ -74,5 +30,13 @@ h1{
     color: var(--primaryColor);
     margin-bottom: 10px;
     padding-bottom: 10px;
+}
+
+.buttonF{
+    display: flex;
+    width: 270px;
+    justify-content: center;
+    align-content: center;
+    background-color: var(--primaryColor);
 }
 

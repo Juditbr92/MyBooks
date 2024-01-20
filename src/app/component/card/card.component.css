@@ -1,0 +1,63 @@
+.card {
+    height: 750px; 
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: transparent;
+    padding: 0px;
+}
+
+.btn{
+    display: flex;
+    width: 250px;
+    justify-content: center;
+    align-content: center;
+    background-color: var(--primaryColor);
+}
+
+.odd{
+    background-color: var(--primaryColor);
+}
+
+.even{
+    background-color: aquamarine;
+}
+
+.picture{
+    height: 60%;
+    width: 270px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin: 5px 5px 0px 5px;
+}
+
+.card-title{
+    color: var(--primaryColor);
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 0px 0px 10px 0;
+    border-bottom: 1px solid var(--primaryColor);
+}
+
+.card-text{
+    display: flex;
+    align-content: flex-start;
+    justify-items: flex-start;
+}
+
+.btn-danger{
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    height: 40px;
+    width: 40px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    margin: 0px;
+}
+

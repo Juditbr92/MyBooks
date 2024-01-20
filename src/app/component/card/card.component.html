@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem">
+    <button type="button" class="btn btn-danger" (click)="getBook()">X</button>
+    <img src={{bookPhoto}} class="card-img-top picture" alt="Portada del libro"/>
+    <div class="card-body">
+        <h5 class="card-title">{{bookTitle}}</h5>
+        <p class="card-text">{{bookId | referencia}}</p>
+        <p class="card-text">Autor: {{bookAuthor}}</p>
+        <p class="card-text">Tipo: {{bookType}}</p>
+        <p class="card-text">Precio: {{bookPrice}}€</p>
+        <a href="#" class="btn btn-primary">Comprar</a>
+    </div>
+</div>

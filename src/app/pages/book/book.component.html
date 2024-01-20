@@ -1,17 +1,7 @@
 <div class="container">
     <div class="row">
-        @for (book of library; track book.id_book; let odd = $odd; let even = $even) {
-            <div class="card" style="width: 18rem">
-                <img src={{book.photo}} class="card-img-top picture" alt="Portada del libro" />
-                <div class="card-body">
-                    <h5 class="card-title">{{book.title}}</h5>
-                    <p class="card-text">{{book.id_book | referencia}}</p>
-                    <p class="card-text">Autor: {{book.author}}</p>
-                    <p class="card-text">Tipo: {{book.type}}</p>
-                    <p class="card-text">Precio:{{book.price}}€</p>
-                    <a href="#" class="btn btn-primary"[ngClass]="{odd: odd, even:even}">Comprar</a>
-                </div>
-            </div>
+        @for (book of this.library; track book.id_book; let odd = $odd; let even = $even) {
+            <app-card (selectBook)="deleteBook($event)" class= "cardC" [bookPhoto] ="book.photo" [bookTitle] ="book.title" [bookId] = "book.id_book" [bookAuthor] = "book.author" [bookType] = "book.type" [bookPrice] = "book.price"></app-card>
         } @empty {<div class="alert alert-danger" role="alert">
             Vaya, no hay libros añadidos!
         </div>}

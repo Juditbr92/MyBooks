@@ -1,9 +1,36 @@
 .container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     height: auto;
     margin-top: 10px;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+}
+
+#buscador{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.form-control{
+    border: 1px solid var(--primaryColor)
+}
+
+#inputGroup-sizing-sm{
+    border: 1px solid var(--primaryColor)
+}
+
+.loop{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .cardC {
@@ -16,27 +43,11 @@
     margin: 10px;
 }
 
-
-.formularioContainer{
-    height: 750px;
-    width: 450px;
-    border: 1px solid var(--primaryColor);
-    padding: 10px;
-    margin-top: 10px;
+button{
+    border: none;
+    background: none;
 }
 
-h1{
-    border-bottom: 2px solid var(--primaryColor);
-    color: var(--primaryColor);
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-}
 
-.buttonF{
-    display: flex;
-    width: 270px;
-    justify-content: center;
-    align-content: center;
-    background-color: var(--primaryColor);
-}
+
 

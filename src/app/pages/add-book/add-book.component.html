@@ -1,0 +1,35 @@
+<div class="container">
+    <img src="assets/img/libros.jpg">
+    <div class="formularioContainer">
+        <div class="form">
+            <form>
+                <h1>Añade un nuevo libro</h1>
+                <div class="mb-3">
+                    <label for="inputRef" class="form-label">Ref:</label>
+                    <input type="text" class="form-control" id="inputRef" aria-describedby="ref" #id_book>
+                </div>
+                <div class="mb-3">
+                    <label for="inputTitle" class="form-label">Título</label>
+                    <input type="text" class="form-control" id="inputTitle" aria-describedby="title" #inputTitle>
+                </div>
+                <div class="mb-3">
+                    <label for="inputAuthor" class="form-label">Autor</label>
+                    <input type="text" class="form-control" id="inputAuthor" #inputAutor>
+                </div>
+                <div class="mb-3">
+                    <label for="inputType" class="form-label">Tipo</label>
+                    <input type="text" class="form-control" id="inputType" #inputTipo>
+                </div>
+                <div class="mb-3">
+                    <label for="inputPrice" class="form-label">Precio</label>
+                    <input type="number" class="form-control" id="inputPrice" #inputPrecio>
+                </div>
+                <div class="mb-3">
+                    <label for="inputPhoto" class="form-label">Imagen Url</label>
+                    <input type="text" class="form-control" id="inputImg" #inputImagen>
+                </div>
+                <button type="button" class="btn btn-primary buttonF" (click)="addBook(id_book, inputTitle, inputAutor, inputTipo, inputPrecio, inputImagen)">Añadir libro </button>
+            </form>
+        </div>
+    </div>
+</div>

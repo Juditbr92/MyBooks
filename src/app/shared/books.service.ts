@@ -79,5 +79,15 @@ export class BooksService {
     }
   }
 
+  public delete(id_book: Number) : Boolean{
+    const bookIndex = this.books.findIndex((book) => book.id_book === id_book);
+
+    if (bookIndex !== -1){
+      this.books.splice(bookIndex, 1);
+      return true 
+    }
+    return false
+  }
+
   constructor() { }
 }

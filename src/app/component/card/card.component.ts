@@ -4,6 +4,7 @@ import { BookComponent } from '../../pages/book/book.component';
 import { ReferenciaPipe } from '../../../pipes/referencia.pipe';
 import { CommonModule } from '@angular/common';
 import { EventEmitter } from '@angular/core';
+import { BooksService } from '../../shared/books.service';
 
 @Component({
   selector: 'app-card',
@@ -22,6 +23,10 @@ export class CardComponent {
 
   @Output() selectBook = new EventEmitter<Book>();
 
+  constructor(private readonly booksService:BooksService){
+    
+  }
+
   public getBook(){
     const selectedBook: Book = {
       photo: this.bookPhoto, 
@@ -32,5 +37,9 @@ export class CardComponent {
       price: this.bookPrice
     }
     this.selectBook.emit(selectedBook);
+  }
+
+  public deleteBook(id_book: Number){
+    this.booksService.delete(id_book);
   }
 }

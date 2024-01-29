@@ -1,0 +1,57 @@
+<!-- Formulario Template Driven-->
+
+<div class="container">
+    <img src="https://static.mujerhoy.com/www/multimedia/202005/20/media/cortadas/plataformas-resumenes-libros-k3PH-U110241932894Z9G-624x468@MujerHoy.jpg" alt="">
+    <div class="row">
+        <form #templateForm = "ngForm" (ngSubmit)="submit(templateForm.value)">
+            <h1>Log in</h1>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input 
+                type="email"    
+                name = "email"
+                [(ngModel)]="user.email"
+                class="form-control"
+                required
+                email
+                #email = "ngModel">
+                @if( (email.dirty || email.touched) && email.invalid) {
+                    @if(email.errors  && email.errors['required']) {
+                        <div>
+                            <p class="error"> *Campo obligatorio</p>
+                        </div>
+                    }
+                    @if(email.errors && email.errors['email']){
+                        <div>
+                            <p class= "error"> *Email incorrecto</p>
+                        </div>
+                    }
+                }
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input 
+                type="password" 
+                class="form-control" 
+                name = "password"
+                [(ngModel)]="user.password"
+                #password = "ngModel" 
+                required
+                minlength="5"
+                >
+                @if ((password.dirty || password.touched) && password.invalid){
+                    @if (password.errors && password.errors ['required']){
+                            <p class="error"> *Campo obligatorio</p>
+                    }
+                    @if(!hasUpperCase(user.password)) {
+                        <p class="error">*La contraseña debe contener una mayúscula</p>
+                }
+                    @if(password.errors && password.errors['minlength']){
+                            <p class="error">*Contraseña demasiado corta</p>
+                    }        
+                }
+            </div>
+            <button [disabled]="templateForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

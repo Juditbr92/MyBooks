@@ -8,6 +8,7 @@
 
 img{
     width: 70%;
+    height: 85%;
     display: flex;
     align-content: flex-start;
 }

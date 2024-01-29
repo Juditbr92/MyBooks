@@ -1,21 +1,72 @@
-<form class="row g-3 registro">
+<!--Formulario Model Driven-->
+
+<form [formGroup]="registerForm" (ngSubmit)="handleSubmit()" class="row g-3 registro">
     <div class="col-12">
         <label for="inputName" class="form-label input">Nombre</label>
-        <input type="text" class="form-control" id="inputName" placeholder="John">
+        <input 
+        type="text" 
+        class="form-control" 
+        id="inputName" 
+        placeholder="John"
+        formControlName = "name">
+
+        @if( (registerForm.get("name")?.dirty || registerForm.get('name')?.touched) && registerForm.get('name')?.invalid){
+            @if (registerForm.get('name')?.hasError('required')){
+                <p class=" error">*Campo obligatorio</p>
+            }
+        }
     </div>
     <div class="col-12">
         <label for="inputSurname" class="form-label input">Apellidos</label>
-        <input type="text" class="form-control" id="inputSurname" placeholder="Doe">
+        <input 
+        type="text" 
+        class="form-control" 
+        id="inputSurname" 
+        placeholder="Doe"
+        formControlName = "surname">
+
+        @if( (registerForm.get('surname')?.touched || registerForm.get('surname')?.dirty) && registerForm.get('surname')?.invalid){
+            @if (registerForm.get('surname')?.hasError('required')){
+                <p class=" error">*Campo obligatorio</p>
+            }
+        }
     </div>
     <div class="col-md-6">
         <label for="inputEmail4" class="form-label input">Email</label>
-        <input type="email" class="form-control" id="inputEmail4" placeholder="johndoe@gmail.com">
+        <input 
+        type="email" 
+        class="form-control" 
+        id="inputEmail4" 
+        placeholder="johndoe@gmail.com"
+        formControlName = "email">
+
+        @if( (registerForm.get('email')?.dirty || registerForm.get('email')?.touched) && registerForm.get('email')?.invalid){
+            @if(registerForm.get('email')?.hasError('required')){
+                <p class=" error">*Campo obligatorio</p>
+            }
+            @if(registerForm.get('email')?.hasError('email')){
+                <p class=" error">*Dirección de email no válida</p>
+            }
+        }
     </div>
     <div class="col-md-6">
         <label for="inputPassword4" class="form-label input">Contraseña</label>
-        <input type="password" class="form-control" id="inputPassword4">
+        <input 
+        type="password" 
+        class="form-control" 
+        id="inputPassword4"
+        formControlName = "password">
+
+        @if( (registerForm.get('password')?.dirty || registerForm.get('password')?.touched) && registerForm.get('password')?.invalid){
+            @if (registerForm.get('password')?.hasError('required')){
+                <p class=" error">*Campo obligatorio</p>
+            }
+            @if(registerForm.get('password')?.hasError('minlength')){
+                <p class=" error">*La contraseña es demasiado corta</p>
+            }
+        }
     </div>
     <div class="col-12">
-        <button type="submit" class="btn input">Suscribirse</button>
+        <button [disabled]="registerForm.invalid" type="submit" class="btn input">Suscribirse</button>
     </div>
 </form>

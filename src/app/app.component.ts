@@ -8,11 +8,12 @@ import { FormRegisterComponent } from './component/form-register/form-register.c
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BookComponent } from './pages/book/book.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent,HomeComponent,FormRegisterComponent, RegisterComponent, ProfileComponent, BookComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, FooterComponent,HomeComponent,FormRegisterComponent, RegisterComponent, ProfileComponent, BookComponent, HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

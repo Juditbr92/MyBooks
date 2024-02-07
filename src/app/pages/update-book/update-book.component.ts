@@ -27,7 +27,11 @@ export class UpdateBookComponent {
       photo: inputImg.value,
     };
 
-    this.booksService.editBook(newBook);
+    // this.booksService.editBook(newBook);
+
+    this.booksService.editApi(newBook).subscribe((data) => {
+      console.log(data)
+    })
   }
 
 }

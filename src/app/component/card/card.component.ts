@@ -39,7 +39,11 @@ export class CardComponent {
     this.selectBook.emit(selectedBook);
   }
 
-  public deleteBook(id_book: Number){
-    this.booksService.delete(id_book);
+  public deleteBook(id_book: any){
+    // this.booksService.delete(id_book);
+
+    this.booksService.deleteApi(id_book).subscribe((data) => {
+      console.log(data)
+    })
   }
 }

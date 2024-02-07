@@ -27,7 +27,11 @@ export class AddBookComponent {
       photo: inputImagen.value,
     };
     
-    this.booksService.addNewBook(newBook);
+    // this.booksService.addNewBook(newBook);
+
+    this.booksService.addApi(newBook).subscribe((data) => {
+      console.log(data);
+    })
   }
   }
 

@@ -12,22 +12,36 @@ import { BooksService } from '../../shared/books.service';
   templateUrl: './book.component.html',
   styleUrl: './book.component.css'
 })
-export class BookComponent { 
-  public books : Book[] = [];
-  constructor( public readonly bookService: BooksService){
-
+export class BookComponent {
+  public books: Book[] | [] = [];
+  constructor(public readonly bookService: BooksService) {
+    // this.books = this.bookService.getAll();
   }
 
-  ngOnInit(){
-    this.books = this.bookService.getAll();
+  ngOnInit() {
+    this.bookService.getAllApi().subscribe((data: any) => {
+      console.log(data)
+
+      this.books = data
+    })
   }
 
   public searchById(bookId: HTMLInputElement){
     if(bookId.value === ''){
-      this.books = this.bookService.getAll()
+      this.bookService.getAllApi().subscribe((data) => {
+        console.log(data)
+      })
     } else{
-      this.books = this.bookService.getOne(Number(bookId.value))
+    this.bookService.getOneApi(Number(bookId.value)).subscribe((data) => {
+      console.log(data)
+    })
     }
-    console.log(bookId.value)
   }
 }
+
+// FUNCIONES SIN API: 
+
+  // ngOnInit(){
+  //   this.books = this.bookService.getAll();
+  // }
+  // 

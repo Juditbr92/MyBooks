@@ -21,29 +21,16 @@ export class CardComponent {
   @Input() public bookType!: string;
   @Input() public bookPrice!: number;
 
-  @Output() selectBook = new EventEmitter<Book>();
+  @Output() selectBook = new EventEmitter<number>();
 
   constructor(private readonly booksService:BooksService){
     
   }
 
-  public getBook(){
-    const selectedBook: Book = {
-      photo: this.bookPhoto, 
-      title: this.bookTitle, 
-      id_book: this.bookId,  
-      author: this.bookAuthor,
-      type: this.bookType, 
-      price: this.bookPrice
-    }
-    this.selectBook.emit(selectedBook);
-  }
-
-  public deleteBook(id_book: any){
+  
+  public deleteBook(id_book: number){
     // this.booksService.delete(id_book);
-
-    this.booksService.deleteApi(id_book).subscribe((data) => {
-      console.log(data)
-    })
+    this.selectBook.emit(id_book)
   }
 }
+

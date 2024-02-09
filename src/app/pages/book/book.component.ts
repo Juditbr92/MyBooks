@@ -21,23 +21,37 @@ export class BookComponent {
   ngOnInit() {
     this.bookService.getAllApi().subscribe((data: any) => {
       console.log(data)
-
       this.books = data
     })
   }
 
-  public searchById(bookId: HTMLInputElement){
-    if(bookId.value === ''){
-      this.bookService.getAllApi().subscribe((data) => {
+  public searchById(id_book: HTMLInputElement) {
+    if (id_book.value === '') {
+      this.bookService.getAllApi().subscribe((data: any) => {
         console.log(data)
+        this.books = data
       })
-    } else{
-    this.bookService.getOneApi(Number(bookId.value)).subscribe((data) => {
-      console.log(data)
-    })
+    } else {
+      this.bookService.getOneApi(Number(id_book.value)).subscribe((data:any) => {
+        console.log(data)
+      this.books = [data]
+      })
     }
   }
+
+  public deleteBook(id_book: number) {
+    console.log(id_book)
+    this.bookService.deleteApi(id_book).subscribe((data) => {
+      this.bookService.getAllApi().subscribe((data: any) => {
+        console.log(data)
+
+        this.books = data
+      })
+    }
+    )
+  }
 }
+
 
 // FUNCIONES SIN API: 
 

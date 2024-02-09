@@ -56,13 +56,8 @@ export class BooksService {
     return this.http.get(`${this.url}/books`)
   }
 
-  public getOneApi(id_book: number) : Observable <Object> {
-    const chosenBook = this.books.find((book) => book.id_book === id_book);
-    if(chosenBook){
-      return this.http.get(`${this.url}/books?id_book=${id_book}`)
-    } else{
-      return this.http.get(`${this.url}/books`)
-    }
+  public getOneApi(id_book: number): Observable<Object>{
+    return this.http.get(`${this.url}/books?id_book=${id_book}`)
   }
 
   public addApi(book: Book) {

@@ -3,19 +3,19 @@
         <div class="input-group input-group-sm mb-3" id="buscador">
             <span class="input-group-text" id="inputGroup-sizing-sm">
                 <button (click)="searchById(id_book)"> 
-                    <i class="fa-solid fa-magnifying-glass"  ></i>
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </span>
-            <input type="text" class="form-control" aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm" placeholder="Buscar libro" #id_book>
+            <input #id_book type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm" placeholder="Buscar libro">
         </div>
         <div class="loop">
             @for (book of this.books; track book.id_book; let odd = $odd; let even = $even ) {
-            <app-card  class="cardC" [bookPhoto]="book.photo"
+            <app-card (selectBook)="deleteBook($event)" class="cardC" [bookPhoto]="book.photo"
                 [bookTitle]="book.title" [bookId]="book.id_book" [bookAuthor]="book.author" [bookType]="book.type"
                 [bookPrice]="book.price"></app-card>
             } @empty {<div class="alert alert-danger" role="alert">
-                !Vaya, no hemos podido encontrar ese libro!
+                ¡Vaya, no hemos podido encontrar ese libro!
             </div>}
         </div>
 
